@@ -27,7 +27,7 @@ def values(message: telebot.types.Message):
 @bot.message_handler(content_types=['text', ])
 def get_price(message: telebot.types.Message):
     try:
-        words = message.text.split('   ')
+        words = message.text.split(' ')
 
         if len(words) != 3:
             raise APIException('Введено больше 3-х параметров, попробуйте снова')
