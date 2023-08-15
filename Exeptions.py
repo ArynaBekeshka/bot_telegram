@@ -33,8 +33,8 @@ class CryptoConverter:
         if amount < 0:
             raise APIException(f'Вы ввели отрицательное кол-во')
 
-        if base_ticker not in keys:
-            raise APIException(f'Не удалось получить курс для валюты: {base}')
+        #if base_ticker not in keys
+            #raise APIException(f'Не удалось получить курс для валюты: {base}')
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
         total_base = json.loads(r.content)[keys[base]]
